@@ -1,7 +1,7 @@
-import "./projects-css/betAndFriends.css";
+import "./projects-css/projects.css";
 import { useState } from "react";
-import macbook from "./macbookBet.png";
-import macbook2 from "./macbookBet2.png";
+import macbook from "./images/macbookBet.png";
+import macbook2 from "./images/macbookBet2.png";
 import { GrProjects } from "react-icons/gr";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";

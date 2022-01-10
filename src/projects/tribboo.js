@@ -1,7 +1,7 @@
-import "./projects-css/betAndFriends.css";
+import "./projects-css/projects.css";
 import { useState } from "react";
-import macbookTribboo from "./macbookTribboo.png";
-import macbookTribboo2 from "./macbookTribboo2.png";
+import macbookTribboo from "./images/macbookTribboo.png";
+import macbookTribboo2 from "./images/macbookTribboo2.png";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
 

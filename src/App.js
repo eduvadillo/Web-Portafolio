@@ -11,6 +11,7 @@ import Tribboo from "./projects/tribboo";
 import Housfy from "./projects/housfy";
 import GreenJade from "./projects/greenJade";
 import Pokegotchi from "./projects/pokegotchi";
+import Board from "./projects/game/board";
 
 function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });

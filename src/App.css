@@ -372,8 +372,14 @@ a {
   }
 
   .iconBackHome {
-    margin-left: -11rem;
+    display: none !important;
+    /* margin-left: -11rem; */
   }
+
+  .description h1 {
+    text-align: center;
+  }
+
   .description-button {
     margin-bottom: 2rem;
   }
