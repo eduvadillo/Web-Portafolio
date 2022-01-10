@@ -2,7 +2,7 @@ import "./projects-css/betAndFriends.css";
 import { useState } from "react";
 import macbook from "./macbookBet.png";
 import macbook2 from "./macbookBet2.png";
-
+import { GrProjects } from "react-icons/gr";
 import { AiOutlineLeft } from "react-icons/ai";
 import { AiOutlineRight } from "react-icons/ai";
 
@@ -10,6 +10,7 @@ function BetAndFriends() {
   const [photoHome, setPhotoHome] = useState(true);
   const [photoLeague, setPhotoLeague] = useState(false);
   const [projectHome, setProjectHome] = useState(true);
+  const [descriptionButton, setDescriptionButton] = useState(true);
 
   const handlePhotoProjectLeft = (e) => {
     console.log(`desde el left`);

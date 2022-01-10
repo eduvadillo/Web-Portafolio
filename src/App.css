@@ -354,7 +354,33 @@ a {
 /* mobile */
 
 @media (max-width: 450px) {
+  section {
+    margin-top: 3rem;
+  }
   section h1 {
     font-size: 9vw;
+  }
+
+  .photo {
+    height: 20vh !important;
+  }
+  .photos-container {
+    width: auto !important;
+    margin-top: -8rem !important;
+    align-items: normal !important;
+    margin-bottom: 3rem;
+  }
+
+  .iconBackHome {
+    margin-left: -11rem;
+  }
+  .description-button {
+    margin-bottom: 2rem;
+  }
+  .central {
+    margin-top: 6rem;
+  }
+  .page-content-bet {
+    width: 95%;
   }
 }
