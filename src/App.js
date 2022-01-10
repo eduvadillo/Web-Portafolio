@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState, useEffect } from "react";
 import classNames from "classnames";
@@ -102,7 +101,7 @@ function App() {
   setTimeout(() => {
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
-    console.log(`tpggle`, toggleSwitch);
+    /* console.log(`tpggle`, toggleSwitch); */
     toggleSwitch.addEventListener("change", switchTheme, false);
 
     const currentTheme = localStorage.getItem("theme") ? localStorage.getItem("theme") : null;
@@ -285,6 +284,12 @@ function App() {
     }
   };
 
+  console.log(
+    "%c Contratame " + "%c eduvadillo1@gmail.com ",
+    "color:purple ; background:yellow ; font-weight: bolder",
+    "color:yellow ; background: purple ; font-weight: bold"
+  );
+
   return (
     <>
       <div
@@ -304,10 +309,10 @@ function App() {
                 />
               </a>
             </div>
-            <div class='theme-switch-wrapper mouseIsOver'>
-              <label class='theme-switch' for='checkbox'>
+            <div className='theme-switch-wrapper mouseIsOver'>
+              <label className='theme-switch'>
                 <input type='checkbox' id='checkbox' />
-                <div class='slider round'></div>
+                <div className='slider round'></div>
               </label>
             </div>
           </header>
@@ -348,14 +353,15 @@ function App() {
                 </div>
                 <div className='content-word color-secundary'>
                   <span className='color color-2'>f</span>
-                  <span className='color color-3'>r</span>
-                  <span className='color color-4'>o</span>
-                  <span className='color color-5'>n</span>
-                  <span className='color color-1'>t</span>
-                  <span className='color color-2'>-</span>
-                  <span className='color color-3'>e</span>
-                  <span className='color color-4'>n</span>
-                  <span className='color color-5'>d</span>
+                  <span className='color color-3'>u</span>
+                  <span className='color color-4'>l</span>
+                  <span className='color color-5'>l</span>
+                  <span className='color color-1'>-</span>
+                  <span className='color color-2'>s</span>
+                  <span className='color color-3'>t</span>
+                  <span className='color color-4'>a</span>
+                  <span className='color color-5'>c</span>
+                  <span className='color color-1'>k</span>
                 </div>
               </div>
               <div mode='out-in' className='content-line'>
@@ -426,7 +432,12 @@ function App() {
                 </div>
                 <div mode='out-in' className='content-line'>
                   <div className='content-word color mouseIsOver'>
-                    <a href='http://betandfriends.com' target='_blank' className='page-hover'>
+                    <a
+                      href='http://betandfriends.com'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='page-hover'
+                    >
                       BetAndFriends
                     </a>
                     <span className='color color-5'>.</span>

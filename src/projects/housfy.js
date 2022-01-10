@@ -61,7 +61,11 @@ function Housfy() {
           </div>
           <div className='description'>
             <h1>
-              <a href='http://housfy-mars-challenge.herokuapp.com/' target='_blank'>
+              <a
+                href='http://housfy-mars-challenge.herokuapp.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
                 Housfy Challenge
               </a>
             </h1>
@@ -78,7 +82,11 @@ function Housfy() {
       ) : (
         <div className='description-container'>
           <h1>
-            <a href='http://housfy-mars-challenge.herokuapp.com/' target='_blank'>
+            <a
+              href='http://housfy-mars-challenge.herokuapp.com/'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
               Housfy Challenge
             </a>
           </h1>

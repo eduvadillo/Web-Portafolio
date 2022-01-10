@@ -16,6 +16,6 @@ Guess The Number Game: (https://game-guess-the-number.herokuapp.com)
 
 My Socials: (http://eduvadillosite.herokuapp.com)
 
-GreenJAde Clone: (http://jadecoinflip.herokuapp.com)
+GreenJade Clone: (http://jadecoinflip.herokuapp.com)
 
 The projects are deployed in the free version of Heroku, if the web has been inactive for 30 minutes the servers "sleep", for this reason it may be that the first time you open a project it will be slow to load.

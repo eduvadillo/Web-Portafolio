@@ -62,7 +62,7 @@ function Tribboo() {
           </div>
           <div className='description'>
             <h1>
-              <a href='https://tribboo.herokuapp.com/' target='_blank'>
+              <a href='https://tribboo.herokuapp.com/' rel='noopener noreferrer' target='_blank'>
                 Tribboo Challenge
               </a>
             </h1>
@@ -79,7 +79,7 @@ function Tribboo() {
       ) : (
         <div className='description-container'>
           <h1>
-            <a href='https://tribboo.herokuapp.com/' target='_blank'>
+            <a href='https://tribboo.herokuapp.com/' rel='noopener noreferrer' target='_blank'>
               Tribboo Challenge
             </a>
           </h1>

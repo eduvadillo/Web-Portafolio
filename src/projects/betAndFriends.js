@@ -63,7 +63,7 @@ function BetAndFriends() {
           </div>
           <div className='description'>
             <h1>
-              <a href='http://betandfriends.com/' target='_blank'>
+              <a href='http://betandfriends.com/' target='_blank' rel='noopener noreferrer'>
                 BetAndFriends
               </a>
             </h1>
@@ -80,7 +80,7 @@ function BetAndFriends() {
       ) : (
         <div className='description-container'>
           <h1>
-            <a href='http://betandfriends.com/' target='_blank'>
+            <a href='http://betandfriends.com/' target='_blank' rel='noopener noreferrer'>
               BetAndFriends
             </a>
           </h1>

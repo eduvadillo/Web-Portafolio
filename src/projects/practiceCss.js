@@ -62,7 +62,11 @@ function PracticeCss() {
           </div>
           <div className='description'>
             <h1>
-              <a href='http://eduvadillosite.herokuapp.com/' target='_blank'>
+              <a
+                href='http://eduvadillosite.herokuapp.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
                 My Socials
               </a>
             </h1>
@@ -79,7 +83,11 @@ function PracticeCss() {
       ) : (
         <div className='description-container'>
           <h1>
-            <a href='http://eduvadillosite.herokuapp.com/' target='_blank'>
+            <a
+              href='http://eduvadillosite.herokuapp.com/'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
               My Socials
             </a>
           </h1>

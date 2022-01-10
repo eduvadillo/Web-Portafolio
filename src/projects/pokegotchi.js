@@ -62,7 +62,11 @@ function Pokegotchi() {
           </div>
           <div className='description'>
             <h1>
-              <a href='http://pokegotchi-challenge.herokuapp.com/' target='_blank'>
+              <a
+                href='http://pokegotchi-challenge.herokuapp.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
                 Pokegotchi Challenge
               </a>
             </h1>
@@ -79,7 +83,11 @@ function Pokegotchi() {
       ) : (
         <div className='description-container'>
           <h1>
-            <a href='http://pokegotchi-challenge.herokuapp.com/' target='_blank'>
+            <a
+              href='http://pokegotchi-challenge.herokuapp.com/'
+              rel='noopener noreferrer'
+              target='_blank'
+            >
               Pokegotchi Challenge
             </a>
           </h1>

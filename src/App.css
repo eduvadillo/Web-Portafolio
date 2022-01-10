@@ -350,3 +350,11 @@ a {
   position: absolute;
   margin-top: 300px;
 }
+
+/* mobile */
+
+@media (max-width: 450px) {
+  section h1 {
+    font-size: 9vw;
+  }
+}

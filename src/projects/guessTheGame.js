@@ -62,7 +62,11 @@ function GuessTheGame() {
           </div>
           <div className='description'>
             <h1>
-              <a href='https://game-guess-the-number.herokuapp.com/' target='_blank'>
+              <a
+                href='https://game-guess-the-number.herokuapp.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
                 Guess The Number
               </a>
             </h1>
@@ -79,7 +83,11 @@ function GuessTheGame() {
       ) : (
         <div className='description-container'>
           <h1>
-            <a href='https://game-guess-the-number.herokuapp.com/' target='_blank'>
+            <a
+              href='https://game-guess-the-number.herokuapp.com/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               Guess The Number
             </a>
           </h1>

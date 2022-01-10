@@ -62,7 +62,11 @@ function GreenJade() {
           </div>
           <div className='description'>
             <h1>
-              <a href='http://jadecoinflip.herokuapp.com/' target='_blank'>
+              <a
+                href='http://jadecoinflip.herokuapp.com/'
+                rel='noopener noreferrer'
+                target='_blank'
+              >
                 GreenJade Clone
               </a>
             </h1>
@@ -79,7 +83,7 @@ function GreenJade() {
       ) : (
         <div className='description-container'>
           <h1>
-            <a href='http://jadecoinflip.herokuapp.com/' target='_blank'>
+            <a href='http://jadecoinflip.herokuapp.com/' rel='noopener noreferrer' target='_blank'>
               GreenJade Clone
             </a>
           </h1>
