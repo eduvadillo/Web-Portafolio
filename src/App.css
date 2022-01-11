@@ -390,3 +390,9 @@ a {
     width: 95%;
   }
 }
+
+/* canvas */
+
+#canvas {
+  background-color: black;
+}

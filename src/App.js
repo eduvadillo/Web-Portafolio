@@ -297,6 +297,9 @@ function App() {
         style={{ left: `${position.x}px`, top: `${position.y}px` }}
         className={cursorClasses}
       ></div>
+      {/*       <div className='canvas-div'>
+        <Board />
+      </div> */}
       <div className={pointers} data-mode='dark'>
         <div className='page-content'>
           <header>
