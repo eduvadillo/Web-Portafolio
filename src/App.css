@@ -10,6 +10,7 @@ body {
   width: 100%;
   height: auto;
   cursor: none;
+  animation: animaBack 3s linear;
 }
 
 .page-project {
@@ -33,6 +34,7 @@ body {
   transition-property: opacity, background-color, transform, mix-blend-mode; */
   transition: transform 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53),
     -webkit-transform 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+  animation: animationContent 5s linear;
 }
 
 .cursor--link-hovered {
@@ -71,6 +73,7 @@ body {
   flex-direction: column;
   align-content: space-between;
   transition: all 0.4s cubic-bezier(0.17, 0.67, 0.16, 1.03);
+  animation: animationContent 5s linear;
 }
 
 .page-content header {
@@ -351,6 +354,16 @@ a {
   margin-top: 300px;
 }
 
+.icon-theme {
+  color: var(--primary-color);
+  margin-right: 1rem;
+}
+
+.icon-theme2 {
+  color: var(--primary-color);
+  margin-left: 1rem;
+}
+
 /* mobile */
 
 @media (max-width: 450px) {
@@ -389,6 +402,91 @@ a {
   .page-content-bet {
     width: 95%;
   }
+}
+
+/* Loading */
+
+.div-loading {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background: var(--bg-color);
+  color: var(--font-color);
+}
+
+.div-loading h1 {
+  position: relative;
+  font-size: 10vw;
+  color: var(--bg-color);
+  -webkit-text-stroke: 0.3vw var(--font-color);
+  animation: loading 4s linear;
+}
+
+.div-loading h1::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  color: var(--font-color);
+  -webkit-text-stroke: 0vw var(--font-color);
+  border-right: 2px solid var(--font-color);
+  overflow: hidden;
+  animation: animate 4s linear;
+}
+
+@keyframes loading {
+  50% {
+    color: var(--bg-color);
+    border-right: 2px solid var(--bg-color);
+    -webkit-text-stroke: 0vw var(--bg-color);
+  }
+}
+
+@keyframes animate {
+  0% {
+    /*  border-right: 2px solid #01fe87; */
+    width: 0;
+  }
+  25% {
+    width: 100%;
+  }
+  50% {
+    width: 100%;
+    color: var(--bg-color);
+    border-right: 2px solid var(--bg-color);
+  }
+  100% {
+    width: 100%;
+    color: var(--bg-color);
+    border-right: 2px solid var(--bg-color);
+  }
+}
+
+@keyframes animationContent {
+  0% {
+    /*  border-right: 2px solid #01fe87; */
+    z-index: -1;
+  }
+  100% {
+    z-index: 0;
+  }
+}
+
+@keyframes animaBack {
+  0% {
+    /*  border-right: 2px solid #01fe87; */
+    background-color: black;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.wrapper-loading {
+  display: none;
 }
 
 /* canvas */

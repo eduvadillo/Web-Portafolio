@@ -4,6 +4,8 @@ import classNames from "classnames";
 import { GrProjects } from "react-icons/gr";
 import { BsChevronDoubleLeft } from "react-icons/bs";
 import { BsChevronDoubleRight } from "react-icons/bs";
+import { BsSun } from "react-icons/bs";
+import { BsMoon } from "react-icons/bs";
 import BetAndFriends from "./projects/betAndFriends";
 import GuessTheGame from "./projects/guessTheGame";
 import PracticeCss from "./projects/practiceCss";
@@ -15,6 +17,7 @@ import Board from "./projects/game/board";
 
 function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [loading, setLoading] = useState(true);
   const [hidden, setHidden] = useState(false);
   const [clicked, setClicked] = useState(false);
   const [linkHovered, setLinkHovered] = useState(false);
@@ -28,6 +31,7 @@ function App() {
   const [greenJade, setGreenJade] = useState(false);
   const [pokegotchi, setPokegotchi] = useState(false);
   const [practiceCss, setPracticeCss] = useState(false);
+  /*   const [iconsTheme, setIconsTheme] = useState(true); */
 
   useEffect(() => {
     addEventListeners();
@@ -93,9 +97,11 @@ function App() {
     if (e.target.checked) {
       document.documentElement.setAttribute("data-theme", "dark");
       localStorage.setItem("theme", "dark");
+      /*  setIconsTheme(false); */
     } else {
       document.documentElement.setAttribute("data-theme", "light");
       localStorage.setItem("theme", "light");
+      /*   setIconsTheme(true); */
     }
   }
 
@@ -285,115 +291,160 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+  }, []);
+
   console.log(
     "%c Contratame " + "%c eduvadillo1@gmail.com ",
     "color:purple ; background:yellow ; font-weight: bolder",
     "color:yellow ; background: purple ; font-weight: bold"
   );
 
-  return (
-    <>
-      <div
-        style={{ left: `${position.x}px`, top: `${position.y}px` }}
-        className={cursorClasses}
-      ></div>
-      {/*       <div className='canvas-div'>
+  if (loading === true) {
+    return (
+      <div className='div-loading'>
+        <h1 data-text='Loading...'>Loading...</h1>
+        <div className='theme-switch-wrapper mouseIsOver wrapper-loading'>
+          <BsSun className='icon-theme' />
+          <label className='theme-switch'>
+            <input type='checkbox' id='checkbox' />
+            <div className='slider round'></div>
+          </label>
+          <BsMoon className='icon-theme2' />
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <div
+          style={{ left: `${position.x}px`, top: `${position.y}px` }}
+          className={cursorClasses}
+        ></div>
+        {/*       <div className='canvas-div'>
         <Board />
       </div> */}
-      <div className={pointers} data-mode='dark'>
-        <div className='page-content'>
-          <header>
-            {/*  <img src='images/' className='component-logo page-hover'></img> */}
-            <div className='page-hover projectClass'>
-              <a href='#projects'>
-                <GrProjects
-                  size={30}
-                  className='mouseIsOver projectIcon'
-                  onClick={handleProjects}
-                />
-              </a>
-            </div>
-            <div className='theme-switch-wrapper mouseIsOver'>
-              <label className='theme-switch'>
-                <input type='checkbox' id='checkbox' />
-                <div className='slider round'></div>
-              </label>
-            </div>
-          </header>
-          <section>
-            <h1>
-              <div mode='out-in' className='content-line'>
-                <div className='content-word color-primary'>
-                  <span className='color color-1'>H</span>
-                  <span className='color color-2'>e</span>
-                  <span className='color color-3'>l</span>
-                  <span className='color color-4'>l</span>
-                  <span className='color color-5'>o</span>
-                  <span className='color color-1'>,</span>
-                </div>
-                <div className='content-word color-primary'>
-                  <span className='color color-3'>I</span>
-                  <span className='color color-4'>'</span>
-                  <span className='color color-5'>m</span>
-                </div>
-                <div className='content-word color-primary'>
-                  <span className='color color-2'>E</span>
-                  <span className='color color-3'>d</span>
-                  <span className='color color-4'>u</span>
-                  <span className='color color-5'>!</span>
-                </div>
+        <div className={pointers} data-mode='dark'>
+          <div className='page-content'>
+            <header>
+              {/*  <img src='images/' className='component-logo page-hover'></img> */}
+              <div className='page-hover projectClass'>
+                <a href='#projects'>
+                  <GrProjects
+                    size={30}
+                    className='mouseIsOver projectIcon'
+                    onClick={handleProjects}
+                  />
+                </a>
               </div>
-              <div mode='out-in' className='content-line'>
-                <div className='content-word color-secundary'>
-                  <span className='color color-1'>A</span>
-                </div>
-                <div className='content-word color-secundary'>
-                  <span className='color color-2'>J</span>
-                  <span className='color color-3'>u</span>
-                  <span className='color color-4'>n</span>
-                  <span className='color color-5'>i</span>
-                  <span className='color color-1'>o</span>
-                  <span className='color color-2'>r</span>
-                </div>
-                <div className='content-word color-secundary'>
-                  <span className='color color-2'>f</span>
-                  <span className='color color-3'>u</span>
-                  <span className='color color-4'>l</span>
-                  <span className='color color-5'>l</span>
-                  <span className='color color-1'>-</span>
-                  <span className='color color-2'>s</span>
-                  <span className='color color-3'>t</span>
-                  <span className='color color-4'>a</span>
-                  <span className='color color-5'>c</span>
-                  <span className='color color-1'>k</span>
-                </div>
+              <div className='theme-switch-wrapper mouseIsOver'>
+                <BsSun className='icon-theme' />
+                <label className='theme-switch'>
+                  <input type='checkbox' id='checkbox' />
+                  <div className='slider round'></div>
+                </label>
+                <BsMoon className='icon-theme2' />
               </div>
-              <div mode='out-in' className='content-line'>
-                <div className='content-word color-secundary'>
-                  <span className='color color-1'>d</span>
-                  <span className='color color-2'>e</span>
-                  <span className='color color-3'>v</span>
-                  <span className='color color-4'>e</span>
-                  <span className='color color-5'>l</span>
-                  <span className='color color-1'>o</span>
-                  <span className='color color-2'>p</span>
-                  <span className='color color-3'>e</span>
-                  <span className='color color-4'>r</span>
-                </div>
-                <div className='content-word color-secundary'>
-                  <span className='color color-2'>c</span>
-                  <span className='color color-3'>u</span>
-                  <span className='color color-4'>r</span>
-                  <span className='color color-5'>r</span>
-                  <span className='color color-1'>e</span>
-                  <span className='color color-2'>n</span>
-                  <span className='color color-3'>t</span>
-                  <span className='color color-4'>l</span>
-                  <span className='color color-5'>y</span>
+            </header>
+            <section>
+              <h1>
+                <div mode='out-in' className='content-line'>
+                  <div className='content-word color-primary'>
+                    <span className='color color-1'>H</span>
+                    <span className='color color-2'>e</span>
+                    <span className='color color-3'>l</span>
+                    <span className='color color-4'>l</span>
+                    <span className='color color-5'>o</span>
+                    <span className='color color-1'>,</span>
+                  </div>
+                  <div className='content-word color-primary'>
+                    <span className='color color-3'>I</span>
+                    <span className='color color-4'>'</span>
+                    <span className='color color-5'>m</span>
+                  </div>
+                  <div className='content-word color-primary'>
+                    <span className='color color-2'>E</span>
+                    <span className='color color-3'>d</span>
+                    <span className='color color-4'>u</span>
+                    <span className='color color-5'>!</span>
+                  </div>
                 </div>
                 <div mode='out-in' className='content-line'>
                   <div className='content-word color-secundary'>
-                    <span className='color color-5'>m</span>
+                    <span className='color color-1'>A</span>
+                  </div>
+                  <div className='content-word color-secundary'>
+                    <span className='color color-2'>J</span>
+                    <span className='color color-3'>u</span>
+                    <span className='color color-4'>n</span>
+                    <span className='color color-5'>i</span>
+                    <span className='color color-1'>o</span>
+                    <span className='color color-2'>r</span>
+                  </div>
+                  <div className='content-word color-secundary'>
+                    <span className='color color-2'>f</span>
+                    <span className='color color-3'>u</span>
+                    <span className='color color-4'>l</span>
+                    <span className='color color-5'>l</span>
+                    <span className='color color-1'>-</span>
+                    <span className='color color-2'>s</span>
+                    <span className='color color-3'>t</span>
+                    <span className='color color-4'>a</span>
+                    <span className='color color-5'>c</span>
+                    <span className='color color-1'>k</span>
+                  </div>
+                </div>
+                <div mode='out-in' className='content-line'>
+                  <div className='content-word color-secundary'>
+                    <span className='color color-1'>d</span>
+                    <span className='color color-2'>e</span>
+                    <span className='color color-3'>v</span>
+                    <span className='color color-4'>e</span>
+                    <span className='color color-5'>l</span>
+                    <span className='color color-1'>o</span>
+                    <span className='color color-2'>p</span>
+                    <span className='color color-3'>e</span>
+                    <span className='color color-4'>r</span>
+                  </div>
+                  <div className='content-word color-secundary'>
+                    <span className='color color-2'>c</span>
+                    <span className='color color-3'>u</span>
+                    <span className='color color-4'>r</span>
+                    <span className='color color-5'>r</span>
+                    <span className='color color-1'>e</span>
+                    <span className='color color-2'>n</span>
+                    <span className='color color-3'>t</span>
+                    <span className='color color-4'>l</span>
+                    <span className='color color-5'>y</span>
+                  </div>
+                  <div mode='out-in' className='content-line'>
+                    <div className='content-word color-secundary'>
+                      <span className='color color-5'>m</span>
+                      <span className='color color-1'>a</span>
+                      <span className='color color-2'>k</span>
+                      <span className='color color-3'>i</span>
+                      <span className='color color-4'>n</span>
+                      <span className='color color-5'>g</span>
+                    </div>
+                    <div className='content-word color-secundary'>
+                      <span className='color color-2'>&</span>
+                    </div>
+                    <div className='content-word color-secundary'>
+                      <span className='color color-3'>m</span>
+                      <span className='color color-4'>o</span>
+                      <span className='color color-5'>s</span>
+                      <span className='color color-1'>t</span>
+                      <span className='color color-2'>l</span>
+                      <span className='color color-3'>y</span>
+                    </div>
+                  </div>
+                  <div className='content-word color-secundary'>
+                    <span className='color color-3'>b</span>
+                    <span className='color color-4'>r</span>
+                    <span className='color color-5'>e</span>
                     <span className='color color-1'>a</span>
                     <span className='color color-2'>k</span>
                     <span className='color color-3'>i</span>
@@ -401,108 +452,87 @@ function App() {
                     <span className='color color-5'>g</span>
                   </div>
                   <div className='content-word color-secundary'>
-                    <span className='color color-2'>&</span>
+                    <span className='color color-2'>t</span>
+                    <span className='color color-3'>h</span>
+                    <span className='color color-4'>i</span>
+                    <span className='color color-5'>n</span>
+                    <span className='color color-1'>g</span>
+                    <span className='color color-2'>s</span>
                   </div>
                   <div className='content-word color-secundary'>
-                    <span className='color color-3'>m</span>
-                    <span className='color color-4'>o</span>
-                    <span className='color color-5'>s</span>
-                    <span className='color color-1'>t</span>
-                    <span className='color color-2'>l</span>
-                    <span className='color color-3'>y</span>
+                    <span className='color color-2'>a</span>
+                    <span className='color color-3'>t</span>
+                  </div>
+                  <div mode='out-in' className='content-line'>
+                    <div className='content-word color mouseIsOver'>
+                      <a
+                        href='http://betandfriends.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        className='page-hover'
+                      >
+                        BetAndFriends
+                      </a>
+                      <span className='color color-5'>.</span>
+                    </div>
                   </div>
                 </div>
-                <div className='content-word color-secundary'>
-                  <span className='color color-3'>b</span>
-                  <span className='color color-4'>r</span>
-                  <span className='color color-5'>e</span>
-                  <span className='color color-1'>a</span>
-                  <span className='color color-2'>k</span>
-                  <span className='color color-3'>i</span>
-                  <span className='color color-4'>n</span>
-                  <span className='color color-5'>g</span>
-                </div>
-                <div className='content-word color-secundary'>
-                  <span className='color color-2'>t</span>
-                  <span className='color color-3'>h</span>
-                  <span className='color color-4'>i</span>
-                  <span className='color color-5'>n</span>
-                  <span className='color color-1'>g</span>
-                  <span className='color color-2'>s</span>
-                </div>
-                <div className='content-word color-secundary'>
-                  <span className='color color-2'>a</span>
-                  <span className='color color-3'>t</span>
-                </div>
-                <div mode='out-in' className='content-line'>
-                  <div className='content-word color mouseIsOver'>
-                    <a
-                      href='http://betandfriends.com'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      className='page-hover'
-                    >
-                      BetAndFriends
-                    </a>
-                    <span className='color color-5'>.</span>
-                  </div>
-                </div>
+              </h1>
+            </section>
+            <footer>
+              <input type='hidden' id='emailInput' value='eduvadillo1@gmail.com'></input>
+              <div className='page-social mouseIsOver' mode='out-in'>
+                <a href='mailto: eduvadillo1@gmail.com' className='page-hover page-copy '>
+                  {" "}
+                  eduvadillo1@gmail.com
+                </a>
               </div>
-            </h1>
-          </section>
-          <footer>
-            <input type='hidden' id='emailInput' value='eduvadillo1@gmail.com'></input>
-            <div className='page-social mouseIsOver' mode='out-in'>
-              <a href='mailto: eduvadillo1@gmail.com' className='page-hover page-copy '>
-                {" "}
-                eduvadillo1@gmail.com
-              </a>
-            </div>
-            {/*  <div className='page-cursor' style='top: 599px; left: 1046px'></div> */}
-          </footer>
-        </div>
-        {projects ? (
-          <div id='projects' className='projects-div'>
-            <div className='left'>
-              {" "}
-              <BsChevronDoubleLeft size={30} onClick={handleBeforeProjects} />
-            </div>
-            <div className='central'>
-              {" "}
-              {betAndFriends ? (
-                <BetAndFriends />
-              ) : tribboo ? (
-                <Tribboo />
-              ) : greenJade ? (
-                <GreenJade />
-              ) : housfy ? (
-                <Housfy />
-              ) : pokegotchi ? (
-                <Pokegotchi />
-              ) : guessTheGame ? (
-                <GuessTheGame />
-              ) : practiceCss ? (
-                <PracticeCss />
-              ) : (
-                <h1>julian</h1>
-              )}{" "}
-            </div>
-            <div className='right'>
-              {" "}
-              <BsChevronDoubleRight size={30} onClick={handleNextProjects} />
-              <GrProjects
-                size={30}
-                className='mouseIsOver projectIcon iconBackHome'
-                onClick={handleProjects}
-              />
-            </div>
+              {/*  <div className='page-cursor' style='top: 599px; left: 1046px'></div> */}
+            </footer>
           </div>
-        ) : (
-          <></>
-        )}
-      </div>
-    </>
-  );
+          {projects ? (
+            <div id='projects' className='projects-div'>
+              <div className='left'>
+                {" "}
+                <BsChevronDoubleLeft size={30} onClick={handleBeforeProjects} />
+              </div>
+              <div className='central'>
+                {" "}
+                {betAndFriends ? (
+                  <BetAndFriends />
+                ) : tribboo ? (
+                  <Tribboo />
+                ) : greenJade ? (
+                  <GreenJade />
+                ) : housfy ? (
+                  <Housfy />
+                ) : pokegotchi ? (
+                  <Pokegotchi />
+                ) : guessTheGame ? (
+                  <GuessTheGame />
+                ) : practiceCss ? (
+                  <PracticeCss />
+                ) : (
+                  <h1>julian</h1>
+                )}{" "}
+              </div>
+              <div className='right'>
+                {" "}
+                <BsChevronDoubleRight size={30} onClick={handleNextProjects} />
+                <GrProjects
+                  size={30}
+                  className='mouseIsOver projectIcon iconBackHome'
+                  onClick={handleProjects}
+                />
+              </div>
+            </div>
+          ) : (
+            <></>
+          )}
+        </div>
+      </>
+    );
+  }
 }
 
 export default App;
