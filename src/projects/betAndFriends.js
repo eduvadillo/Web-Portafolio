@@ -51,7 +51,7 @@ function BetAndFriends() {
       {projectHome ? (
         <>
           <div className='photos-container'>
-            <AiOutlineLeft size={25} onClick={handlePhotoProjectLeft} />
+            <AiOutlineLeft className='svg-responsive' size={25} onClick={handlePhotoProjectLeft} />
             {photoHome ? (
               <img src={macbook} className='photo' alt='betandfriends-home'></img>
             ) : photoLeague ? (
@@ -60,7 +60,11 @@ function BetAndFriends() {
               <></>
             )}
             {/*     <img src={betandfriends2} className='photo2' alt='betandfriends-league'></img> */}
-            <AiOutlineRight size={25} onClick={handlePhotoProjectRight} />
+            <AiOutlineRight
+              className='svg-responsive'
+              size={25}
+              onClick={handlePhotoProjectRight}
+            />
           </div>
           <div className='description'>
             <h1>

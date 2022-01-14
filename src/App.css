@@ -404,6 +404,24 @@ a {
   }
 }
 
+@media (max-height: 650px) {
+  .description-container {
+    height: 30rem;
+  }
+  .description-container h1 {
+    text-align: center;
+  }
+  .description-button {
+    width: 16rem !important;
+  }
+  .photos-container {
+    height: 5rem !important;
+  }
+  .svg-responsive {
+    margin-top: -2.5rem;
+  }
+}
+
 /* Loading */
 
 .div-loading {
